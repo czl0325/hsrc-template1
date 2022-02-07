@@ -1,24 +1,16 @@
-# template
+# 海晟移动端开发模板
 
-## Project setup
-```
-npm install
-```
+> 项目ui库采用vant-ui，文档地址：https://vant-contrib.gitee.io/vant/v3/#/zh-CN/home
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### 路由配置
 
-### Compiles and minifies for production
-```
-npm run build
-```
+配置路由注意：一级页面有一个/，二级页面两个/，三级页面三个/，如一级页面/a，二级页面/a/b，三级页面/a/b/c，这样递增，在一级页面进入二级页面后，会缓存一级页面，二级页面进入三级页面后，会缓存二级页面，三级页面退回二级页面，会把三级页面的缓存清掉，二级页面退回一级页面，会把二级页面的缓存清掉
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### 网络请求
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+写在http文件夹内，api.ts文件内，也可以自己创建文件夹分类，引用http1为api路径，http2为文件路径，这两个路径在config.ts里面配置
+
+
+#### 覆盖vant默认样式
+
+在文件/src/assets/css/vantui.less下复写vant的默认样式覆盖。具体参考vantui的文档

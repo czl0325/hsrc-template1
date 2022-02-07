@@ -1,7 +1,6 @@
 import { Toast } from "vant"
 import { MyAxios } from "@/http/myAxios"
 import { AxiosInstance } from "axios"
-// @ts-ignore
 import { api_url, file_url } from "@/config"
 
 interface BaseResponseData<T> {
@@ -25,6 +24,17 @@ export interface FileResponseData {
 export interface PageModel<T> {
   totalRows: number;
   rows: T[]
+}
+
+export interface FileModel {
+  content?: string;
+  file?: File;
+  message?: string;
+  status?: string;
+
+  url?: string;
+  isImage?: boolean;
+  pictureId?: string;
 }
 
 export class HttpService {
