@@ -1,13 +1,15 @@
-const path = require('path')
-const fs = require('fs')
-
 module.exports = {
   prompts: {
     name: {
       type: 'string',
-      required: true,
+      required: false,
       message: 'Project name',
       default: 'myProject'
+    },
+    author: {
+      type: 'string',
+      required: false,
+      message: 'Author name'
     }
   }
 }
