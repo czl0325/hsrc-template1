@@ -1,0 +1,96 @@
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+a {
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6, span, small {
+  text-align: left;
+}
+
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 125% !important;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  html {
+    font-size: 150% !important;
+  }
+}
+
+@media only screen and (min-width: 1242px) {
+  html {
+    font-size: 187.5% !important;
+  }
+}
