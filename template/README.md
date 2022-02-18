@@ -13,4 +13,34 @@
 
 #### 覆盖vant默认样式
 
-在文件/src/assets/css/vantui.less下复写vant的默认样式覆盖。具体参考vantui的文档
+在文件/src/assets/css/vantui.less下复写vant的默认样式覆盖。具体可复写的参数值参考vantui的文档
+
+
+#### 列表的下拉刷新和上拉加载更多
+
+html固定写法
+```html
+<van-pull-refresh style="width: 100%;min-height: calc(100vh - 50px);" v-model="state.refreshing" @refresh="getOrderList(true)">
+  <van-list v-model:loading="state.loading" :finished="state.finished" finished-text="没有更多数据" :immediate-check="false" @load="getOrderList(false)">
+    <order-item v-for="order in orderList" :key="order.orderId" :order="order"/>
+  </van-list>
+</van-pull-refresh>
+```
+
+固定写法：定义一个响应式对象
+```ts
+const state = reactive({ refreshing: false, loading: false, finished: true })
+```
+
+请求方法只需要调用getList方法即可，第三四个参数传入是否是刷新(refresh)和你定义的state<br>
+getList,getList2,getList3三个方法都是请求列表的，只是后端返回的参数不同。
+```ts
+http1.getList2<OrderInfo>('', {
+    _method: 'bf.mobile.fuj.coop.send',
+    methodName: '/user/coop/service/order/query',
+    userId: sessionStorage.getItem('userId') || '',
+    orderState,
+    pageNum,
+    pageSize: PAGE_SIZE
+  }, refresh, state)
+```
